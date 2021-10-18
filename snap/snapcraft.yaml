@@ -1,0 +1,75 @@
+name: matrix-commander-gael
+base: core20
+version: "2021.07.23"
+summary: Simple but convenient CLI-based Matrix client app
+description: |
+  This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
+  Use cases for this program could be
+  - a bot or part of a bot,
+  - to send alerts,
+  - combine it with cron to publish periodic data,
+  - send yourself daily/weekly reminders via a cron job
+  - send yourself a daily song from your music collection
+  - a trivial way to fire off some instant messages from the command line
+  - to automate sending via programs and scripts
+  - a "blogger" who frequently sends messages and images to the same room(s) could use it
+  - a person could write a diary or run a gratitutde journal by sending messages to her/his own room
+  - as educational material that showcases the use of the matrix-nio SDK
+grade: stable
+confinement: strict
+
+architectures:
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: amd64
+
+license: "GPL-3.0"
+
+apps:
+  matrix-commander:
+    command: matrix-commander.py
+    completer: matrix-commander.bash
+    environment:
+      PYTHONPATH: $SNAP/usr/lib/python3.8:$SNAP/usr/lib/python3.8/lib-dynload:$SNAP/lib/python3.8/site-packages
+      MAGIC: $SNAP/usr/share/file/magic.mgc
+    plugs:
+      - home
+      - network
+      - network-bind
+
+parts:
+  app:
+    plugin: python
+    source: https://github.com/8go/matrix-commander.git
+    source-type: git
+    requirements:
+      - requirements.txt
+    filesets:
+      files2keep: [etc, bin, lib, lib64, share, usr, matrix-commander.py, matrix-commander.bash]
+      files2delete: [-usr/share/man, -usr/share/bug, -usr/share/doc, -usr/share/lintian]
+    override-pull: |
+      snapcraftctl pull
+
+      sed '3d' requirements.txt
+      sed -i 's/aiofiles>=0.6.0/aiofiles==0.6.0/g' requirements.txt
+
+    override-build: |
+      apt-get install build-essential libpython3-dev libpython3.8-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
+
+      snapcraftctl build
+
+      chmod 755 matrix-commander.py
+
+      cp $SNAPCRAFT_PART_BUILD/matrix-commander.py $SNAPCRAFT_PART_INSTALL
+      cp $SNAPCRAFT_PART_BUILD/auto-completion/bash/matrix-commander.bash $SNAPCRAFT_PART_INSTALL
+
+      rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.8/site-packages/argparse*
+    stage:
+      - $files2keep
+      - $files2delete
+    stage-packages:
+      - libolm3
+      - python3-venv
+      - libpython3.8-stdlib
+      - libmagic1
+      - libmagic-mgc
