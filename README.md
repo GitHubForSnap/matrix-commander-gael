@@ -16,7 +16,7 @@ Use cases for this program could be
 * a person could write a diary or run a gratitutde journal by sending messages to her/his own room
 * as educational material that showcases the use of the matrix-nio SDK
 
-**Create an alias for easy of use (optional)**
+**Create an alias for ease of use (optional)**
 
 `sudo snap alias matrix-commander-gael.matrix-commander matrix-commander`
 
