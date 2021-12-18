@@ -24,6 +24,10 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2021-12-18**
+
+* New build to resolve CVE-2021-3737/USN-5201-1
+
 **2021-10-18**
 
 * First version of this snap based on matrix-commander 2021-07-23
