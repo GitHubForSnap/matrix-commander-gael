@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core20
-version: "2021.07.23-20211218"
+version: "2021.07.23-20220329"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
