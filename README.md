@@ -24,9 +24,32 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2022-05-29**
+
+* Improvements, up to git commit 08e5859 (2022-05-26)
+
+* Bug fix in --event code
+* Introduced an event-templates "repository"
+
 **2022-05-24**
 
 * Many improvements, up to git commit d10ce45 (2022-05-23)
+
+* Made matrix-commander.py executable
+* Add SSO support using browser to complete login
+* Add command to set display-name for authenticated user
+* Correct exit status
+* Prefix additional lines in multiline messages with space
+* Updated from asyncio.get_event_loop().run_until_complete to asyncio.run
+* Allow to disable SSL certificate validation
+* Exit gracefully when store or credentials are missing
+* Added the new commandline options like --no-ssl and --display-name
+* Added pipe and stdin management to images
+* Added new feature --ssl-certificate
+* Added option --no-sso
+* Added "-" for piped stdin input to audio and files as well
+* Added --event to send arbitrary Matrix events
+* Bug fixes in --ssl-certificate code
 
 **2022-03-29**
 

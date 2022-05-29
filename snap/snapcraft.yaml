@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core20
-version: "2022.05.23+git.d10ce45"
+version: "2022.05.26+git.08e5859"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -26,7 +26,7 @@ license: "GPL-3.0"
 
 apps:
   matrix-commander:
-    command: matrix-commander.py
+    command: matrix_commander.py
     completer: matrix-commander.bash
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3.8:$SNAP/usr/lib/python3.8/lib-dynload:$SNAP/lib/python3.8/site-packages
@@ -41,11 +41,11 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-commit: d10ce457aaff1e8f63c6d81c1e3a0d7c53964da5
+    source-commit: 08e5859107086f19cdabb26bca473415038296d8
     requirements:
       - requirements.txt
     filesets:
-      files2keep: [etc, bin, lib, lib64, share, usr, matrix-commander.py, matrix-commander.bash]
+      files2keep: [etc, bin, lib, lib64, share, usr, matrix_commander.py, matrix-commander.bash]
       files2delete: [-usr/share/man, -usr/share/bug, -usr/share/doc, -usr/share/lintian]
 
     override-build: |
@@ -53,9 +53,7 @@ parts:
 
       snapcraftctl build
 
-      chmod 755 matrix-commander.py
-
-      cp $SNAPCRAFT_PART_BUILD/matrix-commander.py $SNAPCRAFT_PART_INSTALL
+      cp $SNAPCRAFT_PART_BUILD/matrix_commander/matrix_commander.py $SNAPCRAFT_PART_INSTALL
       cp $SNAPCRAFT_PART_BUILD/auto-completion/bash/matrix-commander.bash $SNAPCRAFT_PART_INSTALL
 
       rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.8/site-packages/argparse*
