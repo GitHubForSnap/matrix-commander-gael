@@ -24,6 +24,27 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2022-06-11**
+
+* Improvements, up to git commit ecc78d7 (2022-06-10)
+
+* Only reads from keyboard if there are no other actions
+* Added DM (Direct Messaging) feature
+* Added option "--whoami"
+* Added feature "--get-display-name"
+* Added features --set-presence and --get-presence
+* New features: --download and --upload and --separator
+* Added feature --mxc-to-http
+* New features: --devices, --discovery-info, --login-info
+* Added features: --upload, --download, --delete-mxc, --file-name, --key-dict, --access-token
+* Added feature --rest to invoke the Matrix REST API
+* Added feature --delete-mxc-before
+* Added features --set-avatar and --get-avatar
+* Added features --export-keys and --import-keys
+* Added feature --get-openid-token
+* Added feature --delete-device to delete devices
+* Added feature --room-redact to delete messages, images, files, etc. from client GUIs
+
 **2022-05-29**
 
 * Improvements, up to git commit 08e5859 (2022-05-26)
