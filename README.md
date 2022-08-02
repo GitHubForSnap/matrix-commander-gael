@@ -24,6 +24,24 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2022-08-02**
+
+* Improvements, up to v3.5.0
+
+* Added room alias to room id conversion for sending images
+* Minor modifications to handle SVG files better as images
+* Minor fix for sending SVG files
+* Added feature "--logout" to logout and remove device from use
+* Allow all actions to be performed in the same command
+* Added "--login", re-did internals to allow more parallelism
+* New features "--room-resolve-alias" and "--room-set-alias"
+* Added new feature "--room-set-alias" to add an alias to a room
+* Added new feature "--room-get-state" to print state of room(s)
+* Added new feature "--room-get-visibility" to find out if room is private or public
+* New option "--has-permission"
+* Added feature "--get-profile" to print user profile(s)
+* Added feature "--print-event-id" also to sending actions
+
 **2022-07-15**
 
 * New build to resolve CVE-2015-20107/USN-5519-1
