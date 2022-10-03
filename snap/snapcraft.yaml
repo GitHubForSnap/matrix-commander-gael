@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core20
-version: "3.5.0"
+version: "3.5.1"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -41,7 +41,7 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-tag: "v3.5.0"
+    source-tag: "v3.5.1"
     requirements:
       - requirements.txt
     filesets:

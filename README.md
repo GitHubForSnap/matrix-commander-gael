@@ -24,6 +24,12 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2022-10-03**
+
+* Improvements, up to v3.5.1
+
+* Minor bug fix for --tail
+
 **2022-08-02**
 
 * Improvements, up to v3.5.0
