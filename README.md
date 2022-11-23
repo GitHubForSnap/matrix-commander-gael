@@ -24,6 +24,24 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2022-11-23**
+
+* Improvements, up to v5.0.0
+
+* Added --sync off|full to allow turning sync off for send actions, default is --sync full
+* Bug fix in --joined-members, added initial part of new feature --output
+* -output is currently only implemented for 2 functions: --joined-members and --joined-rooms
+* Added new option --get-room-info to get room alias, room display name, and much more
+* Improved --room-get-info to allow also aliases instead of room id
+* Added new option `--get-client-info`
+* Added new type `json-spec` to `--output`
+* Added new option `--verbose`
+* Changes to --output, `json-spec` only provides output for `--listen`
+* Added --output format logic also to --version
+* 2 bug fixes: --room-create failed for empty aliasm --joined-members failed when avatar missing
+* New feature: --plain now available for --room-create and --room-dm-create
+* Improved error logging
+
 **2022-10-03**
 
 * Improvements, up to v3.5.1
