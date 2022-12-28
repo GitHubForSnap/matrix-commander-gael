@@ -1,6 +1,6 @@
 name: matrix-commander-gael
-base: core20
-version: "5.0.0-20221209"
+base: core22
+version: "6.0.1-core22"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -29,7 +29,7 @@ apps:
     command: matrix_commander.py
     completer: matrix-commander.bash
     environment:
-      PYTHONPATH: $SNAP/usr/lib/python3.8:$SNAP/usr/lib/python3.8/lib-dynload:$SNAP/lib/python3.8/site-packages
+      PYTHONPATH: $SNAP/usr/lib/python3.10:$SNAP/usr/lib/python3.10/lib-dynload:$SNAP/lib/python3.10/site-packages
       MAGIC: $SNAP/usr/share/file/magic.mgc
     plugs:
       - home
@@ -41,28 +41,40 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-tag: "v5.0.0"
-    requirements:
+    source-tag: "v6.0.1"
+    python-requirements:
       - requirements.txt
-    filesets:
-      files2keep: [etc, bin, lib, lib64, share, usr, matrix_commander.py, matrix-commander.bash]
-      files2delete: [-usr/share/man, -usr/share/bug, -usr/share/doc, -usr/share/lintian]
+        #    filesets:
+        #      files2keep: [etc, bin, lib, lib64, share, usr, matrix_commander.py, matrix-commander.bash]
+        #      files2delete: [-usr/share/man, -usr/share/bug, -usr/share/doc, -usr/share/lintian]
 
     override-build: |
-      apt-get install build-essential libpython3-dev libpython3.8-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
+      apt-get install build-essential libpython3-dev libpython3.10-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
 
       snapcraftctl build
 
       cp $SNAPCRAFT_PART_BUILD/matrix_commander/matrix_commander.py $SNAPCRAFT_PART_INSTALL
       cp $SNAPCRAFT_PART_BUILD/auto-completion/bash/matrix-commander.bash $SNAPCRAFT_PART_INSTALL
 
-      rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.8/site-packages/argparse*
+      rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.10/site-packages/argparse*
     stage:
-      - $files2keep
-      - $files2delete
+      - etc
+      - bin
+      - lib
+      - lib64
+        #      - share
+      - usr
+      - matrix_commander.py
+      - matrix-commander.bash
+      - -usr/share/man
+      - -usr/share/bug
+      - -usr/share/doc
+      - -usr/share/lintian
+        #      - $files2keep
+        #      - $files2delete
     stage-packages:
       - libolm3
       - python3-venv
-      - libpython3.8-stdlib
+      - libpython3.10-stdlib
       - libmagic1
       - libmagic-mgc
