@@ -24,6 +24,10 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2023-01-24**
+
+* New build to resolve CVE-2022-40897/USN-5817-1
+
 **2022-12-28**
 
 * New build to switch to core22 as most of the users are on Ubuntu 22.04
