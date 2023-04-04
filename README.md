@@ -24,6 +24,12 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2023-04-04**
+
+* Improvements, up to v6.0.2
+
+* Fix for error when providing wrong password at login
+
 **2023-03-18**
 
 * New build to resolve CVE-2023-24329/USN-5960-1

@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core22
-version: "6.0.1-20230318"
+version: "6.0.2"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -41,12 +41,12 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-tag: "v6.0.1"
+    source-tag: "v6.0.2"
     python-requirements:
       - requirements.txt
 
     override-build: |
-      apt-get install build-essential libpython3-dev libpython3.10-stdlib libdbus-1-dev libglib2.0-dev libolm-dev pkg-config python3-pip
+      apt-get install build-essential libpython3-dev libpython3.10-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
 
       craftctl default
 
@@ -69,3 +69,5 @@ parts:
       - libolm3
       - python3-venv
       - libpython3.10-stdlib
+      - libmagic1
+      - libmagic-mgc
