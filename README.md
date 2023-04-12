@@ -24,6 +24,12 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2023-04-12**
+
+* Improvements, up to v7.0.0
+
+* Support for emojize
+
 **2023-04-04**
 
 * Improvements, up to v6.0.2
