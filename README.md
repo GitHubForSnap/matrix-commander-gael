@@ -24,6 +24,12 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2023-04-19**
+
+* Improvements, up to v7.1.0
+
+* New feature --room-invites LIST|JOIN|LIST+JOIN
+
 **2023-04-12**
 
 * Improvements, up to v7.0.0
