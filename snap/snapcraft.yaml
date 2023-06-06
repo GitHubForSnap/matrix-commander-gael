@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core22
-version: "7.1.0"
+version: "7.2.0"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -41,7 +41,7 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-tag: "v7.1.0"
+    source-tag: "v7.2.0"
     python-requirements:
       - requirements.txt
 
@@ -52,6 +52,7 @@ parts:
 
       cp $SNAPCRAFT_PART_BUILD/matrix_commander/matrix_commander.py $SNAPCRAFT_PART_INSTALL
       cp $SNAPCRAFT_PART_BUILD/auto-completion/bash/matrix-commander.bash $SNAPCRAFT_PART_INSTALL
+      sed -i 's/matrix-commander.py/matrix-commander-gael.matrix-commander.py/g' $SNAPCRAFT_PART_INSTALL/matrix-commander.bash
 
       rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.10/site-packages/argparse*
     stage:
