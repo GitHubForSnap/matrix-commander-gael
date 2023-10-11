@@ -24,6 +24,12 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2023-10-11**
+
+* Improvements, up to v7.3.1
+
+* New feature --download-media-name SOURCE|CLEAN|EVENTID
+
 **2023-09-13**
 
 * New build to resolve CVE-2022-48554/USN-6359-1
