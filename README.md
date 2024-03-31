@@ -24,6 +24,14 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-03-31**
+
+* Improvements, up to v7.6.0
+
+* Added feature "time" to --download-media-name
+* Added new feature: --room-dm-create-allow-duplicates
+* Added new feature: --joined-dm-rooms to list all joined DM rooms of current user
+
 **2023-10-11**
 
 * Improvements, up to v7.3.1
