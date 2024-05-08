@@ -1,6 +1,6 @@
 name: matrix-commander-gael
-base: core22
-version: "7.6.0"
+base: core24
+version: "7.6.2"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -18,9 +18,13 @@ description: |
 grade: stable
 confinement: strict
 
-architectures:
-  - build-on: arm64
-  - build-on: amd64
+platforms:
+  arm64:
+    build-on: arm64
+    build-for: arm64
+  amd64:
+    build-on: amd64
+    build-for: amd64
 
 license: "GPL-3.0"
 
@@ -29,7 +33,7 @@ apps:
     command: matrix_commander.py
     completer: matrix-commander.bash
     environment:
-      PYTHONPATH: $SNAP/usr/lib/python3.10:$SNAP/usr/lib/python3.10/lib-dynload:$SNAP/lib/python3.10/site-packages
+      PYTHONPATH: $SNAP/usr/lib/python3.12:$SNAP/usr/lib/python3.12/lib-dynload:$SNAP/lib/python3.12/site-packages
       MAGIC: $SNAP/usr/share/file/magic.mgc
     plugs:
       - home
@@ -41,12 +45,12 @@ parts:
     plugin: python
     source: https://github.com/8go/matrix-commander.git
     source-type: git
-    source-tag: "v7.6.0"
+    source-tag: "v7.6.2"
     python-requirements:
       - requirements.txt
 
     override-build: |
-      apt-get install build-essential libpython3-dev libpython3.10-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
+      apt-get install build-essential libpython3-dev libpython3.12-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
 
       craftctl default
 
@@ -54,7 +58,7 @@ parts:
       cp $SNAPCRAFT_PART_BUILD/auto-completion/bash/matrix-commander.bash $SNAPCRAFT_PART_INSTALL
       sed -i 's/matrix-commander.py/matrix-commander-gael.matrix-commander.py/g' $SNAPCRAFT_PART_INSTALL/matrix-commander.bash
 
-      rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.10/site-packages/argparse*
+      rm -rf $SNAPCRAFT_PART_INSTALL/lib/python3.12/site-packages/argparse*
     stage:
       - bin
       - lib
@@ -69,6 +73,6 @@ parts:
     stage-packages:
       - libolm3
       - python3-venv
-      - libpython3.10-stdlib
+      - libpython3.12-stdlib
       - libmagic1
       - libmagic-mgc

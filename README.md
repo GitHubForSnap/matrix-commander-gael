@@ -24,6 +24,13 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-05-08**
+* Improvements, up to v7.6.2
+
+* Using core24 to update the Python runtime
+* Targeting Python v3.12 following https://github.com/8go/matrix-commander/issues/168
+
+
 **2024-03-31**
 
 * Improvements, up to v7.6.0
