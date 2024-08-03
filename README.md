@@ -24,6 +24,9 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-08-03**
+* New build to resolve CVE-2024-4032/USN-6941-1
+
 **2024-05-08**
 * Improvements, up to v7.6.2
 
