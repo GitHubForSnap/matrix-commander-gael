@@ -24,6 +24,11 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-09-04**
+* Improvements, up to v7.7.0
+* Added new feature: --verify manual does a one-way setting of trust
+* Added new feature: --verify emojireq initiates an emoji verification (instead of waiting for one)
+
 **2024-08-03**
 * New build to resolve CVE-2024-4032/USN-6941-1
 
