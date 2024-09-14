@@ -24,6 +24,9 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-09-14**
+* New build to resolve CVE-2024-6345/USN-7002-1
+
 **2024-09-04**
 * Improvements, up to v7.7.0
 * Added new feature: --verify manual does a one-way setting of trust
