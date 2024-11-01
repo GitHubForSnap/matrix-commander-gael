@@ -24,6 +24,11 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2024-11-01**
+* Improvements, up to v8.0.0
+* Added minor changes to allow sending files/images to unverified rooms
+* Changed --get-room-info does no longer return "creator"
+
 **2024-09-17**
 * New build to resolve CVE-2024-6923/CVE-2024-6232/CVE-2024-8088/CVE-2023-27043/CVE-2024-7592/USN-7015-1
 
