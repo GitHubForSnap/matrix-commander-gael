@@ -1,6 +1,6 @@
 name: matrix-commander-gael
 base: core24
-version: "v8.0.0"
+version: "v8.0.0-20250312"
 summary: Simple but convenient CLI-based Matrix client app
 description: |
   This program is a simple but convenient app to send and receive Matrix messages from the CLI in various different ways.
@@ -46,7 +46,7 @@ parts:
       - requirements.txt
 
     override-build: |
-      apt-get install build-essential libpython3-dev libpython3.12-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
+      apt-get -y install build-essential libpython3-dev libpython3.12-stdlib libdbus-1-dev libglib2.0-dev libmagic-dev libolm-dev pkg-config python3-pip
 
       craftctl default
 

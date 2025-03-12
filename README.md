@@ -24,6 +24,9 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2025-03-12**
+* New build to resolve CVE-2024-9287/CVE-2024-12254/CVE-2025-0938/USN-7116-1/USN-7219-1/USN-7280-1
+
 **2024-11-01**
 * Improvements, up to v8.0.0
 * Added minor changes to allow sending files/images to unverified rooms
