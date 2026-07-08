@@ -24,6 +24,9 @@ Use cases for this program could be
 
 Read https://github.com/8go/matrix-commander#examples-of-calling-matrix-commander
 
+**2026-07-08**
+* New build to resolve USN-8509-1
+
 **2026-03-11**
 * New build to resolve USN-8018-2
 
